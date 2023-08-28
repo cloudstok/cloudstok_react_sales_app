@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import logo from '../../../assets/images/headerlogo.png'
+import logo from '../../assets/images/headerlogo.png'
 import { AiOutlineClose } from 'react-icons/ai'
 import { FiMenu, FiSearch } from 'react-icons/fi'
 import { Link } from 'react-router-dom'

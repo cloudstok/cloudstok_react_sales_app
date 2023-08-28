@@ -1,6 +1,8 @@
 import React from 'react'
-import AwsHostingCard from '../../awsHosting/AwsHostingCard'
+
 import Layout from '../Layout'
+import AwsHostingCard from '../../components/awsHosting/AwsHostingCard'
+
 
 const Home = () => {
   return (
