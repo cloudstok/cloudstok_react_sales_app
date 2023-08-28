@@ -1,0 +1,86 @@
+.footer-section{
+    background-color: rgb(29, 29, 29);
+    padding-top: 2rem;
+}
+
+.cloudstok-footer{
+    width: 100%;
+    padding: 0 4rem 0 4rem;
+    margin: 0 auto 6rem auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.company-container h3{
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    margin-bottom: 1.5em;
+    color: white;
+}
+.company-container p{
+    font-size: 0.9rem;
+    margin: 0.3em;
+    color: rgba(248, 248, 248, 0.764);
+
+}
+.company-container p:hover{
+    cursor: pointer;
+    color: #629ffa;
+}
+
+
+
+.copy-section{
+    background-color: black;
+}
+.copy-footert{
+    padding: 4rem 0;
+    /* width: 80%; */
+    margin: 0 5rem;
+}
+.copy-para{
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.567);
+}
+
+
+.copy-icon{
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.copy-icon p{
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: white;
+}
+
+.icon-box{
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+}
+.icon-box p{
+    display: flex;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+}
+@media (max-width:768px) {
+    .cloudstok-footer{
+  flex-direction: column;
+  padding: 1rem;
+    }
+    .copy-footert{
+        padding: 1rem;
+        margin: 0;
+    }
+    .copy-icon{
+        flex-direction: column;
+    }
+    .icon-box{
+        width: 80%;
+        margin-top: 1rem;
+    }
+}
