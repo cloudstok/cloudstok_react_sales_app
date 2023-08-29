@@ -1,0 +1,248 @@
+.configuration-container{
+}
+.cycle-tab{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    /* border: 2px solid #dbdbdb; */
+    /* padding: .5rem; */
+    outline: none;
+    border-radius: .25rem;
+    margin-top: .2rem;
+}
+ .cycle-link{
+    background-color: white;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    cursor: pointer;
+    /* border-radius: .25rem; */
+}
+.cycle-active{
+    background-color: var(--main-color);
+    color: white;
+}
+.border{
+    border: 2px solid #dbdbdb;
+    padding: .5rem;
+    margin-top: 1rem;
+    border-radius: .25rem;
+}
+.stepper-content{
+    border: 1px solid #dbdbdb;
+    padding: 0.5rem 0rem 0.5rem 0rem ;
+    border-radius: 1rem;
+    background-color: white;
+    margin-bottom: 1rem;
+    box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.1);
+}
+.configuration-container p{
+    /* text-align: center; */
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+.configuration-content{
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    /* padding: 0rem 1rem 0rem 1rem; */
+    gap: 2rem;
+  margin-top: 1rem;
+}
+.configuration-body{
+    width: 32%;
+    /* border: 1px solid red; */
+}
+.configuration-body p{
+    text-align: center;
+}
+.configuration-body .rs{
+    font-size: 2rem;
+    text-align: center;
+}
+.configuration-body select{
+    width: 100%;
+    border: 2px solid #dbdbdb;
+    outline: none;
+    border-radius: .25rem;
+    padding: .5rem;
+    margin-top: .2rem;
+    font-size: 1rem;
+    /* margin: auto; */
+}
+#manage{
+    margin-top: 3rem;
+}
+.server-container{
+    border: 1px solid #dbdbdb;
+    /* padding: .5rem; */
+    margin-top: 2rem;
+}
+.hardware-content{
+    display: flex;
+    padding: .5rem;
+    justify-content: space-between;
+   align-items: center;
+    border-bottom: 1px solid #dbdbdb;
+}
+.select-btn{
+    border: none;
+    width: 7rem;
+    cursor: pointer;
+    padding: .5rem;
+    border-radius: 1rem;
+    margin: .5rem 0rem .5rem 0rem;
+}
+.price-1{
+    font-weight: bold !important;
+}
+.ram-container{
+    padding: .5rem;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+.ram-body{
+    /* width: 30%; */
+    background-color: white;
+    border: 1px solid #dbdbdb;
+    padding: .5rem;
+    box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.1);
+    margin: .5rem;
+    border-radius: .25rem;
+    background-color: white;
+    cursor: pointer;
+    /* width: 50%; */
+}
+.ram-para-content p{
+    margin-top: .5rem;
+}
+.radio-btn-container{
+    display: flex;
+    /* background-color: var(--main-color); */
+    justify-content: space-between;
+    padding: .5rem;
+    color: white;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.service-container{
+    padding: .5rem;
+}
+.service-plan-container{
+    display: flex;
+    margin-top: 1rem;
+   
+}
+.service-plan-body{
+    flex: 0 1 190px;
+    border-radius: .5rem;
+    background-color: var(--main-color);
+    color: white;
+    padding: .4rem;
+    text-align: center;
+    margin: 1rem 1rem 1rem 0rem;
+}
+.service-plan-body p{
+    font-size: .8rem;
+}
+.radio{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.next-step-container{
+    background-color: white;
+    box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.1);
+}
+#back{
+    margin-right: 1rem;
+    background-color: gray;
+}
+.next-step-body{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem;
+    border-radius: .625rem;
+    margin-top: 2rem;
+}
+
+.total-price{
+    font-size: 2rem !important;
+}
+
+
+.btn-container{
+    display: flex;
+justify-content: space-between;
+}
+
+.order-review-container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    /* align-items: center; */
+}
+.order-review-body{
+    width: 48%;
+    border: 1px solid #dbdbdb;
+    /* height: 20rem; */
+    /* padding: 1rem; */
+}
+.billing-form{
+    padding: 1rem;
+}
+.order-details-head{
+    background-color: #dbdbdb;
+    padding: .5rem 1rem .5rem 1rem;
+}
+.order-details-head p{
+    font-size: 1rem;
+}
+.order-input-container{
+    width: 100%;
+    /* margin-top: .5rem */
+}
+.order-input-container input{
+    width: 100%;
+    padding: .5rem;
+    border: 2px solid #dbdbdb;
+    outline: none;
+    border-radius: .25rem;
+}
+.order-table {
+    width: 48%;
+    /* height: 10rem; */
+}
+.order-table table{
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+   
+}
+.total-price-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3rem;
+    padding: .5rem;
+}
+.manage-table{
+    margin-top: 2rem;
+}
+.order-table td,th{
+    border: 1px solid #dbdbdb;
+}
+.order-table th{
+    padding: .5rem 1rem .5rem 1rem;
+    text-align: left;
+    background-color: #dbdbdb;
+    /* border-radius: 1rem; */
+   
+}
+table{
+    margin-top: .5rem;
+}
+.order-table td{
+    padding: 1rem;
+}
