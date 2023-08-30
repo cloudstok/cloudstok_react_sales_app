@@ -9,11 +9,7 @@ const Ticket = () => {
                 <div className='same-all'> Ticket Id  </div>
                 <div className='same-all'> Assigned to  </div>
                 <div className='same-all'> Created By  </div>
-                <div className='same-all'> Attachment <button className='button' type= "button">Submit</button> 
-                
-                 </div>
-
-
+                <div className='same-all'> Attachment <a href="#" class="button">Submit</a></div>
             </div>
 
         </section>
