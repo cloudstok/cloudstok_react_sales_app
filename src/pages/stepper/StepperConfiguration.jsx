@@ -27,9 +27,9 @@ const StepperConfiguration = () => {
     setManageName(item.heading)
   }
 
-  const price = cycleIndex === 0 ? platformRouteData?.cost_Monthly?.slice(1, platformRouteData?.cost_Monthly?.length) : '' || cycleIndex === 1 ? platformRouteData?.cost_Quarterly?.slice(1, platformRouteData?.cost_Quarterly?.length) : "" || cycleIndex === 2 ? platformRouteData?.cost_yearly?.slice(1, platformRouteData?.cost_yearly?.length) : ''
+  const price = cycleIndex === 0 ? platformRouteData?.cost_Monthly?.slice(0, platformRouteData?.cost_Monthly?.length) : '' || cycleIndex === 1 ? platformRouteData?.cost_Quarterly?.slice(0, platformRouteData?.cost_Quarterly?.length) : "" || cycleIndex === 2 ? platformRouteData?.cost_yearly?.slice(0, platformRouteData?.cost_yearly?.length) : ''
   console.log(price)
-  const newPrice = price + manageAmount
+  const newPrice = + price + + manageAmount
 
   useEffect(() => {
     getManageServiceData()
@@ -40,7 +40,8 @@ const StepperConfiguration = () => {
   }
   const onSubmit = async () => {
     platformRouteData.amount = newPrice
-    platformRouteData.manage_Service_id = manageId
+    platformRouteData.manage_Service_id = manageId;
+    platformRouteData.configuration_id = platformRouteData._id
     platformRouteData.billing_Cycle = price
     platformRouteData.manageServiceName = manageName
     platformRouteData.manageServiceAmount = manageAmount
@@ -111,7 +112,7 @@ const StepperConfiguration = () => {
                     <p>  {platformRouteData.storage} SSD RAID 10</p>
                     <p>  {platformRouteData.bandwidth} bandwidth</p>
                   </div>
-                  <p>Free</p>
+                  {/* <p>Free</p> */}
                 </div>
               </div>
             </div>
@@ -138,7 +139,7 @@ const StepperConfiguration = () => {
           </div>
           <div className="next-step-container">
             <div className="next-step-body">
-              <p className='total-price'>Total Price: ${+ price + + manageAmount}</p>
+              <p className='total-price'>Total Price: ${newPrice}</p>
               <div className="">
                 <button type='button' className='button' onClick={onSubmit}>Next Step</button>
               </div>
