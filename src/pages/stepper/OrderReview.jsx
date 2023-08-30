@@ -10,8 +10,7 @@ import OrderTable from './OrderTable';
 const OrderReview = () => {
     const navigate = useNavigate()
     const [activeStep, setActiveStep] = React.useState(1);
-    // console.log(decodedObject)
-    // const inputData=
+
     const {state} = useLocation()
     const newData = state?.orderNewData??{}
     const formik = useFormik({
@@ -23,17 +22,17 @@ const OrderReview = () => {
         pinCode:""
       },
       onSubmit: values => {
-        // values.amount = decodedObject?.data?.amount
-        // values.manageServiceName = decodedObject?.data?.manageServiceName
-        // values.manageServiceAmount= decodedObject?.data?.manageServiceAmount
-        // values.billing_Cycle = decodedObject?.data?.billing_Cycle
+        // values.amount = newData?.data?.amount
+        // values.manageServiceName = newData?.data?.manageServiceName
+        // values.manageServiceAmount= newData?.data?.manageServiceAmount
+        // values.billing_Cycle = newData?.data?.billing_Cycle
         console.log(values)
-        // router.push('/configuration/payment')
+       
       },
     });
     
     const backHandle=()=>{
-    navigate('/')
+    navigate('/platformConfiguration')
     }
   return (
     <section>
@@ -88,7 +87,7 @@ const OrderReview = () => {
      <div className="next-step-container">
        <div className="next-step-body">
              <button type='button' id='back' className='button' onClick={backHandle}>Back</button>
-             <button type='submit' className='button'>Checkout</button>
+             <button type='submit' className='button' onClick={()=>navigate('/payment')}>Checkout</button>
        </div>
      </div>
      </form>

@@ -19,16 +19,16 @@ const PlatformConfiguration = () => {
      
     }, [])
    
-
     const filterData = () => {
         if (activeIndex === 'linux') {
-            return platformData.filter(item => item.os === activeIndex);
+            return platformData?.filter(item => item.os === activeIndex);
         } else {
-            return platformData.filter(item => item.os === activeIndex);
+            return platformData?.filter(item => item.os === activeIndex);
         }
     };
   return (
     <section className=''>
+          
             <div className="tab-container">
                 <div className="">
                     <h1 style={{ color: "black" }}>AWS Hosting </h1>
@@ -56,7 +56,7 @@ const PlatformConfiguration = () => {
                 </div>
             </div>
             <div className="ticket-card-container">
-                {filterData().map((cardData, i) => (
+                {filterData()?.map((cardData, i) => (
                     <PlatformCard cardData={cardData} index={index} key={i}
                     
                     />
