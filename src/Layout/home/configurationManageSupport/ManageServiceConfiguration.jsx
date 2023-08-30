@@ -29,7 +29,7 @@ const ManageServiceConfiguration = () => {
     </p>
     <div className="support-row">
         {
-            manageServiceData.map((item, i) => (
+            manageServiceData?.map((item, i) => (
                 <div id="generic_price_table" key={i}>   
                 <div className="container">
                     <div className="">
