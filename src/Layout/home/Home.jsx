@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../Layout'
 import PlatformConfiguration from './platform/PlatformConfiguration'
 import MangeServiceConfiguration from './configurationManageSupport/ManageServiceConfiguration'
+import SliderComponent from '../../components/slider/SliderComponent'
 
 
 const Home = () => {
@@ -9,6 +10,7 @@ const Home = () => {
     <Layout>
     <PlatformConfiguration/>
   <MangeServiceConfiguration/>
+  <SliderComponent/>
     </Layout>
   )
 }
