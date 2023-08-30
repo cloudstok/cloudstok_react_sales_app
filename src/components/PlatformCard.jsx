@@ -13,7 +13,7 @@ const platformCycle = index === 0 ? 'PER MONTH' : '' || index === 1 ? '6 MONTH' 
         </div>
         <div class="content">
             <div class="price">
-                <p>${platformPrice}</p>
+                <p>{platformPrice}</p>
                
             </div>
             <ul>

@@ -171,9 +171,10 @@
 .pricing-table .btn.bordered {
 	z-index: 50;
 	color: #333;
+    cursor: pointer;
 }
 .pricing-table:hover .btn.bordered{
-	color:#fff !important;
+	color:black !important;
 }
 
 .pricing-table .btn.bordered:after {

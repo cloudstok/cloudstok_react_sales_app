@@ -1,0 +1,48 @@
+/* **** slider-section styling **** */
+@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick-theme.css";
+.slider-section{
+    margin: 2rem;
+}
+.slider-h2{
+    font-size: 1.4rem;
+}
+
+/* **** slider-container styling **** */
+.slider-container{
+    /* display: flex; */
+    justify-content: space-between;
+    margin: 1rem 1rem;
+}
+
+/* **** slider-box styling **** */
+.slider-box{
+    width: 90% !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: .5rem .8rem;
+    padding: .5rem 0;
+    border-radius: .7rem;
+    box-shadow: 0px 4px 13px -2px rgba(0,0,0,0.33);
+-webkit-box-shadow: 0px 4px 13px -2px rgba(0,0,0,0.33);
+-moz-box-shadow: 0px 4px 13px -2px rgba(0,0,0,0.33);
+}
+.slider-img{
+    display: flex;
+    justify-content: center;
+    /* flex-direction: column; */
+}
+.slider-img img{
+    width: 7rem;
+    aspect-ratio: 4/3;
+    object-fit: contain;
+    /* margin: .5rem 0; */
+}
+
+.mongo-para{
+    font-size: 1.1rem;
+    text-align: center;
+    /* margin-bottom: .5rem; */
+}

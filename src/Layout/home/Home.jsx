@@ -1,8 +1,11 @@
 import React from 'react'
 import Layout from '../Layout'
+
+// import Slider from './Slider/SliderComponent'
+import SliderComponent from './Slider/SliderComponent'
 import PlatformConfiguration from './platform/PlatformConfiguration'
 import MangeServiceConfiguration from './configurationManageSupport/ManageServiceConfiguration'
-import SliderComponent from '../../components/slider/SliderComponent'
+
 import Ticket from '../../components/ticket/Ticket'
 
 
