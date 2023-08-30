@@ -1,0 +1,26 @@
+.ticket-card {
+    border: 1px solid gray;
+    width: 20%;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 7px 13px rgba(0,0,0,0.08);
+
+}
+/* .ticket-container :hover {
+    transform: scale(1.5);
+} */
+.same-all  {
+    padding: 1rem;
+}
+
+.button {
+    /* padding: 0.5rem; */
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}

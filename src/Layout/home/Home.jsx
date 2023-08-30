@@ -6,6 +6,7 @@ import SliderComponent from './Slider/SliderComponent'
 import PlatformConfiguration from './platform/PlatformConfiguration'
 import MangeServiceConfiguration from './configurationManageSupport/ManageServiceConfiguration'
 
+import Ticket from '../../components/ticket/Ticket'
 
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
     <PlatformConfiguration/>
   <MangeServiceConfiguration/>
   <SliderComponent/>
+  <Ticket/>
     </Layout>
   )
 }
