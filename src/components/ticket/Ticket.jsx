@@ -6,11 +6,17 @@ const Ticket = () => {
 
         <section className='ticket-container'>
             <div className='ticket-card'>
-                <div className='same-all'> Ticket Id  </div>
-                <div className='same-all'> Assigned to  </div>
+                <div className='ticket1'> Ticket Id -  </div>
                 <div className='same-all'> Created By  </div>
-                <div className='same-all'> Attachment <a href="#" class="button">Submit</a></div>
-            </div>
+                <div className='same-all'> Status </div>
+                <div className='same-all'> Assigned to  </div>
+                <div className='same-all'> Title  </div>
+                <div className='same-all'> Description </div>
+
+                <div className='attach'> Attachment
+                    <button className='upload' type='Button'>Upload File </button>
+                </div>
+                </div>
 
         </section>
 
