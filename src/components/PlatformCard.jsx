@@ -17,11 +17,11 @@ const platformCycle = index === 0 ? 'PER MONTH' : '' || index === 1 ? '6 MONTH' 
                
             </div>
             <ul>
-                <li>{cardData.vCPU}</li>
-                <li>{cardData.ram}</li>
-                <li>{cardData.storage}</li>
-                <li> {platformCycle} </li>
-                <li> <del>{cardData.bandwidth}</del></li>
+                <li>< GiCheckMark style={{color:"#006cff"}}/>{cardData.vCPU}CPU Core</li>
+                <li>< GiCheckMark style={{color:"#006cff"}} />{cardData.ram}RAM</li>
+                <li>< GiCheckMark style={{color:"#006cff"}} />{cardData.storage}SSD RAID 10</li>
+                <li>< GiCheckMark style={{color:"#006cff"}}/> {platformCycle} </li>
+                <li>< GiCheckMark style={{color:"#006cff"}}/> {cardData.bandwidth}bandwidth</li>
 
             </ul>
             <div class="sign-up">

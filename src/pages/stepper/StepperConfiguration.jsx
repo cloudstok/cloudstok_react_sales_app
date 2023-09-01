@@ -9,7 +9,7 @@ import '../stepper/stepper.css'
 const StepperConfiguration = () => {
   const navigate = useNavigate();
   const { state } = useLocation()
-  const platformRouteData = state?.planData ?? {}
+  const platformRouteData = state?.planData?? {}
   // const manageRouteData = state?.manageServiceData??[]
   console.log(platformRouteData)
   const [cycleIndex, setCycleIndex] = useState(0)
@@ -18,13 +18,13 @@ const StepperConfiguration = () => {
   const [manageAmount, setManageAmount] = useState(0)
   const [manageId, setManageId] = useState("")
   const [manageName, setManageName] = useState("")
+  const [manageData, setManageData] = useState("")
   const [orderData, setOrderData] = useState({})
   const [manageServiceData, setManageServiceData] = useState([])
   const onSelect = (index, item) => {
     setSelectElement(index)
     setManageAmount(item.amount)
-    setManageId(item._id)
-    setManageName(item.heading)
+    setManageData(item)
   }
 
   const price = cycleIndex === 0 ? platformRouteData?.cost_Monthly?.slice(0, platformRouteData?.cost_Monthly?.length) : '' || cycleIndex === 1 ? platformRouteData?.cost_Quarterly?.slice(0, platformRouteData?.cost_Quarterly?.length) : "" || cycleIndex === 2 ? platformRouteData?.cost_yearly?.slice(0, platformRouteData?.cost_yearly?.length) : ''
@@ -38,29 +38,55 @@ const StepperConfiguration = () => {
     const res = await getCaller('findallmanageservices')
     setManageServiceData(res?.data)
   }
+
+//   {
+//     "name": "Nano",
+//        "amount": "678",
+//        "manageService": {
+//            "_id": "645396d5986678a2569405d5",
+//            "heading": "STANDARD MANAGE SERVICES",
+//            "amount": "123",
+//            "bandwidth": "2GB Bandwidth",
+//            "storage": "150GB Storage",
+//            "accounts": "12 Accounts",
+//            "host": "7 Host Domain",
+//            "support": "24/7 Support"
+//        },
+//        "configuration":  {
+//            "_id": "644b7048d9f8efa7546d37cd",
+//            "name": "Nano",
+//            "vCPU": "1",
+//            "ram": "0.5 GB",
+//            "storage": "20 GB",
+//            "bandwidth": "512 GB",
+//            "cost_Monthly": "$200",
+//            "os": "windows",
+//            "plan": "Popular"
+//        }
+// }
+
   const onSubmit = async () => {
-    platformRouteData.amount = newPrice
-    platformRouteData.manage_Service_id = manageId;
-    platformRouteData.configuration_id = platformRouteData._id
-    platformRouteData.billing_Cycle = price
-    platformRouteData.manageServiceName = manageName
-    platformRouteData.manageServiceAmount = manageAmount
+    delete manageData.is_deleted
+    delete platformRouteData.is_deleted
     delete platformRouteData.cost_Monthly;
-    delete platformRouteData._id;
     delete platformRouteData.cost_yearly;
-    delete platformRouteData.__v
     delete platformRouteData.cost_Quarterly;
-    const response  = await postCaller('createOrder',platformRouteData)
-     console.log(response)
-    if (response.status === true) {
-      const jsonStr = response?.id
-      const res = await getCaller(`findbyIdOrder/${jsonStr}`)
-      navigate('/orderReview',{
-        state:{
-          orderNewData:res
-        }
-      })
+    platformRouteData.price = price
+    const finalData = {
+     amount:newPrice,
+    
+     configuartion:platformRouteData,
+     manageService:manageData
     }
+    console.log(finalData)
+    // return
+     const response  = await postCaller('createOrder',finalData)
+     navigate('/orderReview',{
+      state:{
+        orderNewData:finalData
+      }
+     })
+    
   }
   return (
     <Layout>

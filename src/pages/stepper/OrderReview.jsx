@@ -13,6 +13,7 @@ const OrderReview = () => {
 
     const {state} = useLocation()
     const newData = state?.orderNewData??{}
+    // console.log(newData)
     const formik = useFormik({
       initialValues: {
         name:"",
@@ -27,7 +28,7 @@ const OrderReview = () => {
         // values.manageServiceAmount= newData?.data?.manageServiceAmount
         // values.billing_Cycle = newData?.data?.billing_Cycle
         console.log(values)
-       
+       navigate('/login')
       },
     });
     
@@ -87,7 +88,7 @@ const OrderReview = () => {
      <div className="next-step-container">
        <div className="next-step-body">
              <button type='button' id='back' className='button' onClick={backHandle}>Back</button>
-             <button type='submit' className='button' onClick={()=>navigate('/payment')}>Checkout</button>
+             <button type='submit' className='button'>Checkout</button>
        </div>
      </div>
      </form>

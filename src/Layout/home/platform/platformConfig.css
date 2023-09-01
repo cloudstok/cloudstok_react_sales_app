@@ -132,6 +132,10 @@
     margin: 20px 0px;
     font-size: 14px;
     color:#555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .2rem;
 }
 
 .pricing-table .content .sign-up{
@@ -171,9 +175,11 @@
 .pricing-table .btn.bordered {
 	z-index: 50;
 	color: #333;
+    cursor: pointer;;
 }
 .pricing-table:hover .btn.bordered{
-	color:#fff !important;
+	color:black !important;
+    background:linear-gradient(90deg,#0ff,#006cff);
 }
 
 .pricing-table .btn.bordered:after {

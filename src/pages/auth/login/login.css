@@ -1,0 +1,136 @@
+.login-container{
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.register-container-body{
+    width: 40%;
+    border: 2px solid #dbdbdb;
+    padding: 1rem;
+    background-color: white;
+    }
+.login-container-body{
+width: 27%;
+border: 2px solid #dbdbdb;
+padding: 1rem;
+background-color: white;
+}
+.login-logo{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.input-register-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+.input-register-container label{
+    width: 20%;
+}
+.input-container{
+    width: 100%;
+    margin-top: 2rem;
+}
+label{
+    font-size: 1rem;
+}
+ input{
+    width: 100%;
+    padding: .9rem;
+    outline: none;
+    border: 2px solid #dbdbdb;
+    font-size: 1rem;
+    margin-top: .2rem;
+    border-radius: .25rem;
+}
+.login-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.register-btn-container{
+    display: flex;
+    margin-top: 1rem;
+    justify-content: center;
+}
+.space{
+    width: 16.5%;
+}
+.register-btn-body{
+    display: flex;
+    width:83.5%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.register-btn{
+    /* width: 80%; */
+    padding: 0.9rem 4rem .9rem 4rem;
+    border: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    background:linear-gradient(90deg,#0ff,#006cff);
+    cursor: pointer;
+    color: white;
+    border-radius: .25rem;
+}
+.login-btn button{
+    padding: 0.9rem 4rem .9rem 4rem;
+    border: none;
+    width: 100%;
+    font-size: 1rem;
+    text-transform: uppercase;
+    background:linear-gradient(90deg,#0ff,#006cff);
+    cursor: pointer;
+    color: white;
+    border-radius: .25rem;
+}
+.login-para-container{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sign-up{
+    color: #006cff; 
+    text-decoration: underline;
+    /* border: 1px solid red; */
+}
+.login-para-container a{
+    font-size: 1rem;
+  
+}
+.forgot{
+    color: red;
+    text-decoration: underline;
+}
+@media (max-width:1200px) {
+    
+    .login-container-body{
+        width: 50%;
+    }
+    .register-container-body{
+        width: 50%;
+    }
+    .input-register-container{
+        flex-direction: column;
+    }
+    }
+@media (max-width:768px) {
+    
+.login-container-body{
+    width: 100%;
+}
+.register-container-body{
+    width: 100%;
+}
+.input-register-container{
+    flex-direction: column;
+}
+}

@@ -14,9 +14,10 @@ const OrderTable = ({newData}) => {
        </thead>
        <tbody>
          <tr>
-           <td>Package1</td>
-           <td> ${newData?.data?.billing_Cycle} </td>
-           <td>Yearly</td>
+           <td>{newData?.configuartion
+?.name}</td>
+           <td> ${newData?.configuartion?.price} </td>
+           <td>{newData?.configuartion?.plan}</td>
          </tr>
        </tbody>
      </table>
@@ -31,15 +32,15 @@ const OrderTable = ({newData}) => {
       </thead>
       <tbody>
         <tr>
-          <td> {newData?.data?.manageServiceName} </td>
-          <td> ${newData?.data?.manageServiceAmount}  </td>
+          <td> {newData?.manageService?.heading} </td>
+          <td> ${newData?.manageService?.amount}  </td>
         </tr>
       </tbody>
     </table>
     </div>
     <div className="total-price-container">
      <h2>Total Price</h2>
-     <p> ${newData?.data?.amount} </p>
+     <p> ${newData?.amount} </p>
     </div>
     </div>
   )
