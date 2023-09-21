@@ -39,7 +39,7 @@ background-color: white;
 label{
     font-size: 1rem;
 }
- input{
+ .input-container input{
     width: 100%;
     padding: .9rem;
     outline: none;
@@ -79,6 +79,14 @@ label{
     cursor: pointer;
     color: white;
     border-radius: .25rem;
+}
+.sign-up-reg{
+    text-align: center !important;
+}
+.login-para-container-1{
+    display: flex;
+    margin-top: 2rem;
+    justify-content: center;
 }
 .login-btn button{
     padding: 0.9rem 4rem .9rem 4rem;

@@ -1,16 +1,19 @@
 import React from 'react'
 import Layout from '../Layout'
+import SliderComponent from './Slider/SliderComponent'
 import PlatformConfiguration from './platform/PlatformConfiguration'
 import MangeServiceConfiguration from './configurationManageSupport/ManageServiceConfiguration'
-import SliderComponent from '../../components/slider/SliderComponent'
-
+import Progress from '../Progress'
 
 const Home = () => {
   return (
     <Layout>
-    <PlatformConfiguration/>
-  <MangeServiceConfiguration/>
-  <SliderComponent/>
+      <PlatformConfiguration />
+      
+      <SliderComponent />
+
+
+      {/* <Login/> */}
     </Layout>
   )
 }

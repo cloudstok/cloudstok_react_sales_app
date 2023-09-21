@@ -1,19 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { GiCheckMark } from 'react-icons/gi'
 import { Link, useNavigate } from 'react-router-dom';
-const PlatformCard = ({index,cardData}) => {
+
+const PlatformCard = ({index,cardData,onCardSelect}) => {
  const navigate= useNavigate()
 const platformPrice = index === 0 ? cardData.cost_Monthly : '' || index === 1 ? cardData.cost_Quarterly : "" || index === 2 ? cardData.cost_yearly : '';
 const platformCycle = index === 0 ? 'PER MONTH' : '' || index === 1 ? '6 MONTH' : "" || index === 2 ? 'PER YEAR' : ''
+const [selectedCard, setSelectedCard] = useState(null);
+
+  const handleCardSelect = (card) => {
+    setSelectedCard(card);
+  };
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    if (selectedCard) {
+      onCardSelect(selectedCard);
+    }
+  };
   return (
-    <div class="wrapper">
-    <div class="pricing-table gprice-single">
-        <div class="head">
-             <h4 class="title">Basic</h4> 
+   <>
+    <div className="wrapper">
+    <div className="pricing-table gprice-single">
+        <div className="head">
+             <h4 className="title">Basic</h4> 
         </div>
-        <div class="content">
-            <div class="price">
-                <p>${platformPrice}</p>
+        <div className="content">
+            <div className="price">
+                <p>Rs.{platformPrice}</p>
                
             </div>
             <ul>
@@ -24,39 +37,14 @@ const platformCycle = index === 0 ? 'PER MONTH' : '' || index === 1 ? '6 MONTH' 
                 <li>< GiCheckMark style={{color:"#006cff"}}/> {cardData.bandwidth}bandwidth</li>
 
             </ul>
-            <div class="sign-up">
-                <button type='button' class="btn bordered radius" onClick={()=>navigate('/platformConfiguration',{
-             state:{
-             planData:cardData
-             }
-         })} >Purchase</button>
-            </div>
+            
         </div>
     </div>
 </div>
+     
+   </>
 
-  //   <div className='ticket-card-body'>
-  //   <div className="ticket-price-content">
-  //     <p>{cardData.plan}</p>
-  //     <p> {platformPrice} </p>
-  //     <p>{platformCycle}</p>
-  //   </div>
-  //   <div className="ticket-footer">
-  //     <div className="ticket-footer-body">
-  //       <p> < GiCheckMark /> {cardData.vCPU} CPU Core </p>
-  //       <p> < GiCheckMark /> {cardData.ram} RAM</p>
-  //       <p> < GiCheckMark /> {cardData.storage} SSD RAID 10</p>
-  //       <p> < GiCheckMark /> {cardData.bandwidth} bandwidth</p>
-  //     </div>
-  //     <div className="ticket-button">
-  //       <button type='button' className='button' onClick={()=>navigate('/platformConfiguration',{
-  //           state:{
-  //           planData:cardData
-  //           }
-  //       })}> Purchase </button>
-  //     </div>
-  //   </div>
-  // </div>
+ 
   )
 }
 

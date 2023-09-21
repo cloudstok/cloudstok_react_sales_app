@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import './login.css'
 import loginLogo from '../../../assets/images/white-logo.png'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useFormik } from 'formik'
 import * as Yup from "yup";
 import { postCaller } from '../../../services/api'
 const Login = () => {
+   const {state} = useLocation()
+   const loginData = state?.newData??{}
+   console.log(loginData)
    const navigate = useNavigate()
-   const [loginStatus, setLoginStatus] = useState()
+   
    const validationLogin = Yup.object().shape({
       user_id: Yup.string()
          .required('User id is Required'),
@@ -20,27 +23,34 @@ const Login = () => {
          password: "",
       },
       // validationSchema: validationLogin,
-      onSubmit: async (values) => {
-         console.log(values)
-         navigate('/payment')
-         // const res = await postCaller('login', values)
-         // setLoginStatus(res)
-         // if (res.status === false) {
-         //    alert("user not register")
-
-         // } else {
-         //    localStorage.setItem('token', res.token)
-         //    localStorage.setItem('user_name', res?.user.user_id)
-         //    navigate('/platformConfiguration')
-         // }
+      onSubmit: async (values) => {     
+         const res = await postCaller('login', values)
+         if (res.status === true) {
+            localStorage.setItem('token', res.token)
+            alert(res.msg)
+            const resp  = await postCaller('createOrder',loginData)
+            if(resp.status===true){
+               navigate('/payment',{
+                  state:{
+                     paymentData:loginData
+                  }
+               })
+            }
+            else{
+               alert(resp.msg)
+            }
+           
+         } else {
+            alert(res.msg)
+         }
       },
    });
-
-   // useEffect(() => {
-   //    if (localStorage.getItem('token')) {
-   //       navigate('/')
-   //    }
-   // }, [])
+   useEffect(() => {
+      if (localStorage.getItem('token')) {
+        navigate('/profile')
+      }
+    }, [])
+   
 
 
    return (
@@ -49,6 +59,7 @@ const Login = () => {
             <div className="login-logo">
                <img src={loginLogo} alt="" />
             </div>
+            {/* <p>Sign In </p> */}
             <form onSubmit={formik.handleSubmit}>
             <div className="input-container">
                <label htmlFor="username">Username</label> <br />
@@ -76,7 +87,11 @@ const Login = () => {
                <button type='submit'>Sign in and Continue</button>
             </div>
             <div className="login-para-container">
-               <Link to="/register" className='sign-up'>Sign up</Link>
+               <p onClick={()=> navigate('/register',{
+               state:{
+                  newData:loginData
+               }
+            })} className='sign-up'>Sign up</p>
                <Link to="/forgot_paasword" className='forgot'>Forgot Password</Link>
             </div>
             </form>

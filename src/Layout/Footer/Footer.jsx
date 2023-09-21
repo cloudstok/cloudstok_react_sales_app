@@ -7,6 +7,7 @@ import {AiOutlineTwitter} from 'react-icons/ai'
 import {FaPinterestP} from 'react-icons/fa'
 import {IoLogoDribbble} from 'react-icons/io'
 import {RiLinkedinFill} from 'react-icons/ri'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -40,18 +41,14 @@ const Footer = () => {
 
     <div className="copy-section">
       <div className="copy-footert">
-        <div className="copy-para">
-          <p>Cookies | Security & Data Protection Practices | Marketing Privacy Notice | Candidate Privacy Notice  | Diversity Inclusion and <br /> Opportunity | Candidate Privacy Notice (Summary) | Vulnerability Disclosure Notice</p>
-        </div>
+        
         <div className="copy-icon">
           <p>&copy; 2023 CloudStok. All rights reserved</p>
           <div className="icon-box">
-            <p><CgFacebook/></p>
-            <p><AiOutlineTwitter/></p>
-            <p><FaPinterestP/></p>
-            <p><IoLogoDribbble/></p>
-            <p><RiLinkedinFill/></p>
-          </div>
+              <Link to='#'><CgFacebook/></Link>
+              <Link to="#"><IoLogoDribbble/></Link>
+              <Link to="https://www.linkedin.com/company/cloudstok-technologies-private-limited/mycompany/" target='_blank'><RiLinkedinFill/></Link>
+            </div>
         </div>
       </div>
     </div>

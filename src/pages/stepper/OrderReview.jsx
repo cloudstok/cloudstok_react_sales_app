@@ -3,17 +3,18 @@ import React from 'react'
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import '../stepper/stepper.css'
-// import { useFormik } from 'formik';
+
 import StepLabel from '@mui/material/StepLabel';
 import { useLocation, useNavigate } from 'react-router-dom';
 import OrderTable from './OrderTable';
+
 const OrderReview = () => {
     const navigate = useNavigate()
     const [activeStep, setActiveStep] = React.useState(1);
-
     const {state} = useLocation()
     const newData = state?.orderNewData??{}
-    // console.log(newData)
+    const userToken = localStorage.getItem('token')
+    console.log(newData)
     const formik = useFormik({
       initialValues: {
         name:"",
@@ -22,18 +23,30 @@ const OrderReview = () => {
         mobile:"",
         pinCode:""
       },
-      onSubmit: values => {
-        // values.amount = newData?.data?.amount
-        // values.manageServiceName = newData?.data?.manageServiceName
-        // values.manageServiceAmount= newData?.data?.manageServiceAmount
-        // values.billing_Cycle = newData?.data?.billing_Cycle
+      onSubmit: async(values) => {
+        values.amount = newData?.amount
+       values.manageService = newData.manageService
+       values.configuration = newData.configuartion
         console.log(values)
-       navigate('/login')
-      },
+        if(userToken){
+          navigate('/payment')
+         }
+         else{
+          navigate('/register',{
+            state:{
+              productData:values
+            }
+          })
+         }
+       }
     });
     
     const backHandle=()=>{
-    navigate('/platformConfiguration')
+    navigate('/platformConfiguration',{
+      state:{
+        planData:newData
+      }
+    })
     }
   return (
     <section>
@@ -68,7 +81,7 @@ const OrderReview = () => {
                <label htmlFor="address"> Address </label> <br />
                <input type="text" name="address" value={formik.values.address} id="" onChange={formik.handleChange} />
              </div>
-             <div className="order-input-container" >
+             <div className="order-input-container">
                <label htmlFor="email"> Email </label> <br />
                <input type="email" name="email" value={formik.values.email} id="" onChange={formik.handleChange} />
              </div>

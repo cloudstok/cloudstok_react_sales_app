@@ -115,6 +115,9 @@
 }
 .ram-para-content p{
     margin-top: .5rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
 }
 .radio-btn-container{
     display: flex;
@@ -135,16 +138,18 @@
    
 }
 .service-plan-body{
-    flex: 0 1 190px;
+    flex: 0 1 320px;
     border-radius: .5rem;
-    background-color: var(--main-color);
+    background-color: var(--menu-color);
     color: white;
     padding: .4rem;
+    /* height: 140px; */
     text-align: center;
     margin: 1rem 1rem 1rem 0rem;
 }
-.service-plan-body p{
-    font-size: .8rem;
+.m-para{
+    font-size: .8rem !important;
+    padding: 1rem 0 1rem 0;
 }
 .radio{
     width: 1.5rem;
@@ -156,7 +161,7 @@
 }
 #back{
     margin-right: 1rem;
-    background-color: gray;
+    background-color: gray !important;
 }
 .next-step-body{
     display: flex;
@@ -201,7 +206,7 @@ justify-content: space-between;
 }
 .order-input-container{
     width: 100%;
-    /* margin-top: .5rem */
+    margin-top: .5rem
 }
 .order-input-container input{
     width: 100%;

@@ -73,14 +73,22 @@
 /* platfrom card  */
 
 .wrapper{
-   display: flex;
 
+cursor: pointer;
+}
+.conf-card-active{
+    border: 1px solid #006cff;
+    transition: .4s all;
+}
+.active-m-card{
+    border: 1px solid black;
 }
 .pricing-table{
    box-shadow: 0px 0px 18px #ccc;
    text-align: center;
    padding: 30px 0px;
    border-radius: 5px;
+   cursor: pointer;
    width: 100%;
    position: relative;
  
@@ -217,16 +225,13 @@
 }
 
 
-
-
-
 .ticket-card-container{
     display: grid;
     grid-template-columns: repeat(4,1fr);
     gap: 1rem;
     align-items: center;
     position: relative;
-    margin-top: 3rem;
+    margin-top: 1rem;
     justify-content: center;
 }
 .active-card{
@@ -293,4 +298,13 @@ font-weight: normal;
 .ticket-card-body{
     width: 100%;
 }
+}
+
+.purschase-btn-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+.read-more-btn{
+    padding: 1rem 0 1rem 0;
 }

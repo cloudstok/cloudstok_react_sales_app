@@ -10,6 +10,17 @@
     border-bottom: 1px solid white;
     position: relative;
 }
+.box-1{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: #cbcbcb;
+  justify-content: center;
+  border: 1px solid #dbdbdb;
+}
 
 .navlist-container{
   display: flex;
@@ -20,14 +31,11 @@
   font-size: 1rem;
   display: flex;
   margin: 0 2rem 0 2rem;
-  color: black;
+  color: var(--menu-color);
 }
  
-  .activeLink{
-   color: var(--main-color);
-   font-size: 1rem;
-  display: flex;
-  margin: 0 2rem 0 2rem;
+  .active{
+   color: black;
   
   }
   .search-btn{

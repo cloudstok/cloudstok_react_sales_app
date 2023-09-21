@@ -5,21 +5,20 @@ import StepLabel from '@mui/material/StepLabel';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Layout from '../../Layout/Layout';
 import { getCaller, postCaller } from '../../services/api';
+import { GiCheckMark} from 'react-icons/gi'
 import '../stepper/stepper.css'
 const StepperConfiguration = () => {
   const navigate = useNavigate();
   const { state } = useLocation()
   const platformRouteData = state?.planData?? {}
-  // const manageRouteData = state?.manageServiceData??[]
   console.log(platformRouteData)
   const [cycleIndex, setCycleIndex] = useState(0)
-  const [totalAmount, setTotalAmount] = useState(0)
+ 
   const [selectElement, setSelectElement] = useState(0);
   const [manageAmount, setManageAmount] = useState(0)
-  const [manageId, setManageId] = useState("")
-  const [manageName, setManageName] = useState("")
+ 
   const [manageData, setManageData] = useState("")
-  const [orderData, setOrderData] = useState({})
+  
   const [manageServiceData, setManageServiceData] = useState([])
   const onSelect = (index, item) => {
     setSelectElement(index)
@@ -39,31 +38,6 @@ const StepperConfiguration = () => {
     setManageServiceData(res?.data)
   }
 
-//   {
-//     "name": "Nano",
-//        "amount": "678",
-//        "manageService": {
-//            "_id": "645396d5986678a2569405d5",
-//            "heading": "STANDARD MANAGE SERVICES",
-//            "amount": "123",
-//            "bandwidth": "2GB Bandwidth",
-//            "storage": "150GB Storage",
-//            "accounts": "12 Accounts",
-//            "host": "7 Host Domain",
-//            "support": "24/7 Support"
-//        },
-//        "configuration":  {
-//            "_id": "644b7048d9f8efa7546d37cd",
-//            "name": "Nano",
-//            "vCPU": "1",
-//            "ram": "0.5 GB",
-//            "storage": "20 GB",
-//            "bandwidth": "512 GB",
-//            "cost_Monthly": "$200",
-//            "os": "windows",
-//            "plan": "Popular"
-//        }
-// }
 
   const onSubmit = async () => {
     delete manageData.is_deleted
@@ -74,13 +48,10 @@ const StepperConfiguration = () => {
     platformRouteData.price = price
     const finalData = {
      amount:newPrice,
-    
      configuartion:platformRouteData,
      manageService:manageData
     }
     console.log(finalData)
-    // return
-     const response  = await postCaller('createOrder',finalData)
      navigate('/orderReview',{
       state:{
         orderNewData:finalData
@@ -109,12 +80,12 @@ const StepperConfiguration = () => {
           <p>Customize your Hosting Plan to fit your needs.</p>
           <div className="border">
             <div className="configuration-content">
-              <div className="configuration-body">
+              {/* <div className="configuration-body">
                 <label htmlFor="">Hosting Plan</label> <br />
                 <select name="" id="">
                   <option value="">Pulser</option>
                 </select>
-              </div>
+              </div> */}
               <div className="configuration-body">
                 <label htmlFor="">Billing Cycle</label>
                 <ul className='cycle-tab'>
@@ -128,15 +99,15 @@ const StepperConfiguration = () => {
             <div className="server-container">
               <div className="hardware-content">
                 <p className='hardware-body'>Cloud Server Configuration</p>
-                <p className='price-1'> ${price} </p>
+                <p className='price-1'> Rs.{price} </p>
               </div>
               <div className="ram-container">
                 <div className="ram-body">
                   <div className="ram-para-content">
-                    <p>  {platformRouteData.vCPU} CPU Core </p>
-                    <p>  {platformRouteData.ram} RAM</p>
-                    <p>  {platformRouteData.storage} SSD RAID 10</p>
-                    <p>  {platformRouteData.bandwidth} bandwidth</p>
+                    <p> < GiCheckMark style={{ color: "#006cff" }}/> {platformRouteData.vCPU} CPU Core </p>
+                    <p> < GiCheckMark style={{ color: "#006cff" }}/> {platformRouteData.ram} RAM</p>
+                    <p>< GiCheckMark style={{ color: "#006cff" }}/>  {platformRouteData.storage} SSD RAID 10</p>
+                    <p> < GiCheckMark style={{ color: "#006cff" }}/> {platformRouteData.bandwidth} bandwidth</p>
                   </div>
                   {/* <p>Free</p> */}
                 </div>
@@ -145,7 +116,7 @@ const StepperConfiguration = () => {
             <div className="server-container">
               <div className="hardware-content">
                 <p className='hardware-body'>Manage Service</p>
-                <p className='price-1'>${manageAmount} </p>
+                <p className='price-1'>Rs.{manageAmount} </p>
               </div>
               <div className="service-container">
                 <p className='service-para'>Choose Your Manage Service Plan</p>
@@ -153,9 +124,10 @@ const StepperConfiguration = () => {
                   {
                     manageServiceData.map((el, i) => (
                       <div className='service-plan-body' key={i}>
-                        <button type='button' className='select-btn' onClick={() => onSelect(i, el)} > {selectElement === i ? 'Selected ✓' : 'Select'} </button>
-                        <p> {el.heading} <br /> FREE
+                        <button type='button' className='select-btn' onClick={() => onSelect(i, el)} > {selectElement === i ? 'Selected ✓' : 'Select Plan'} </button>
+                        <p className='m-para'> {el.heading}
                         </p>
+                        <p>Free</p>
                       </div>
                     ))
                   }
@@ -165,7 +137,7 @@ const StepperConfiguration = () => {
           </div>
           <div className="next-step-container">
             <div className="next-step-body">
-              <p className='total-price'>Total Price: ${newPrice}</p>
+              <p className='total-price'>Total Price: Rs.{newPrice}</p>
               <div className="">
                 <button type='button' className='button' onClick={onSubmit}>Next Step</button>
               </div>
